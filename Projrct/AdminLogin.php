@@ -144,7 +144,7 @@
                 <input type="password" class="form-control" id="password" name="pwd" placeholder="Password">
                 <span id="sp2" class="error"><?php echo $pwd_err; ?></span>
               </div>
-              <button type="submit" class="btn btn-secondary" id="submit" name="submit">Submit</button>
+              <button type="submit" class="btn btn-secondary" id="submit" name="submit">Login</button>
             </form>
           </div>
         </div>

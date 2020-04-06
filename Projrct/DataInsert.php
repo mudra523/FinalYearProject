@@ -103,17 +103,15 @@ if (isset($_POST['submit'])) {
                 <option  value="ALL">ALL</option>                
               </select>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="File To Upload">Date:</label>
               <input type="date" name="date" id="date" class="form-control" >
-            </div>
+            </div> -->
             <div>
                 <button name="submit" id="button" class="btn btn-primary">Upload</button>            
             </div>
         </form>
-        <div class="row">
-          <div ></div>
-        </div>
+      
     </div>
 </body>
 </html>
