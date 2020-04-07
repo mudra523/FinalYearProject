@@ -1,31 +1,3 @@
-<?php
-include 'Connection.php';
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-
-if (isset($_POST['submit'])) {
-  $circu_name = $_POST['circu_name'];
-  $file = $_POST['file'];
-  $catagory = $_POST['catagory'];
-  $sem = $_POST['sem'];    
-
-  $sql="INSERT INTO circulardb (C_NAME,FILE,CATAGORY,SEMESTER) 
-          VALUES('" . $circu_name . "','" . $file . "','" . $catagory . "','" . $sem . "')";
-
-   $result=$conn->query($sql);
-  if ($result === TRUE) {
-    echo "<script>alert('data is inserted successfully')</script>";
-    echo '<script>window.location="AdminDataManager.php"</script>';
-  } else {
-    echo "<script>alert('data is not inserted')</script>";
-    echo '<script>window.location="DataInsert.php"</script>';
-  }
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +39,7 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
     <div class="container-fluid">
-        <form action="" method="POST" class="border m-5 p-5" id="form">
+        <form action="Upload.php" method="POST" class="border m-5 p-5" id="form" enctype="multipart/form-data">
             <div class="form-group">
               <label for="Circular Name">Circular Name</label>
               <input type="text" name="circu_name" id="circu_name" class="form-control" placeholder="Name your circular hear">
@@ -108,7 +80,7 @@ if (isset($_POST['submit'])) {
               <input type="date" name="date" id="date" class="form-control" >
             </div> -->
             <div>
-                <button name="submit" id="button" class="btn btn-primary">Upload</button>            
+                <button name="submit" id="submit" class="btn btn-primary">Upload</button>            
             </div>
         </form>
       
