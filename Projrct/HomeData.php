@@ -97,7 +97,7 @@
             //      $result = $conn->query("SELECT * FROM circulardb ORDER BY ID DESC;") or die($conn->error);
             //  }
             
-            $result = $conn->query("SELECT * FROM circulardb WHERE CATAGORY='Events' ORDER BY ID DESC;") or die($conn->error);
+            $result = $conn->query("SELECT * FROM circulardb  ORDER BY ID DESC;") or die($conn->error);
                 
                          
             echo "<div class='row'>";
