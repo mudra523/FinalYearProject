@@ -18,7 +18,7 @@ switch ($category) {
         $query = "SELECT * FROM circulardb WHERE CATAGORY='$category' ORDER BY ID DESC;";
         break;
     default:
-        $query = $query = 'SELECT * FROM circulardb ORDER BY ID DESC;';
+        $query = "SELECT * FROM circulardb ORDER BY ID DESC;";
 }
 
 
