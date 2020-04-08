@@ -1,8 +1,8 @@
 <?php
 include 'Connection.php';
 
-$semester = $_POST['semester'];
-$category = $_POST['category'];
+$semester = isset($_POST['semester']) ? $_POST['semester'] : '';
+$category = isset($_POST['category']) ? $_POST['category'] : '';
 
 switch ($category) {
     case 'Exam Time Table':
