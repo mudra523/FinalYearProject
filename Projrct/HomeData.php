@@ -15,7 +15,7 @@ switch ($category) {
     case 'Activity':
     case 'Event':
     case 'Notice':
-        $query = "SELECT * FROM circulardb WHERE CATAGORY='$category' ORDER BY ID DESC;";
+        $query = "SELECT * FROM circulardb WHERE CATAGORY='$category' AND SEMESTER='$semester' ORDER BY ID DESC;";
         break;
     default:
         $query = "SELECT * FROM circulardb ORDER BY ID DESC;";
@@ -34,12 +34,21 @@ while ($row = $result->fetch_assoc()) {
     echo '<td>' . $row['C_NAME'] .
         '</td>';
     echo '<td>';
-    echo "<button id='sidebarCollapse' type='submit' class='btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4 text-dark'  name='submit' role='button'>
-                <i class='fa fa-bars mr-2'></i>
-                <download href='Download.php?ID= {$row['ID']}' >
-                <small class='text-uppercase font-weight-bold'>DOWNLOAD</small>
+    echo "<button id='sidebarCollapse' 
+                type='submit' 
+                class='btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4 text-dark'  name='submit' 
+                role='button'
+            >
+            <i class='fa fa-bars mr-2' >
+                <a href='Download.php?ID={$row['ID']}'>
+                    <download>
+                        <small class='text-uppercase font-weight-bold'>
+                            DOWNLOAD
+                        </small>
+                    </download>
                 </a>
-                </button>";
+            </i>
+        </button>";
     echo '</td>';
     echo '</tr>';
 }

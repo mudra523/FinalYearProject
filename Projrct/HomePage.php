@@ -22,8 +22,8 @@ include('Helper.php');
 <div class="vertical-nav bg-white" id="sidebar">
 
     <div class="py-4 px-3 mb-4 bg-light">
-        <div class="media d-flex align-items-center"><img src="ldrp.jpg" alt="..." width="65"
-                                                          class="img-fluid mr-3 rounded-circle img-thumbnail shadow-sm">
+        <div class="media d-flex align-items-center">
+        <img src="ldrp.jpg" alt="..." width="65" class="img-fluid mr-3 rounded-circle img-thumbnail shadow-sm">
             <div class="media-body">
                 <h4 class="m-0">LDRP-ITR</h4>
                 <!-- <p class="font-weight-light text-muted mb-0">Institute of technology and resuerch</p> -->
@@ -95,6 +95,9 @@ include('Helper.php');
                    aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>Activity
                 </a>
+                <div class="dropdown-menu dropdown-primary">
+                    <?php Helper::generateLinkFromCategory('Activity') ?>
+                </div>
             </div>
         </li>
 
@@ -105,6 +108,9 @@ include('Helper.php');
                    aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>Event
                 </a>
+                <div class="dropdown-menu dropdown-primary">
+                    <?php Helper::generateLinkFromCategory('Event') ?>
+                </div>
             </div>
         </li>
         <li class="nav-item">
@@ -114,6 +120,9 @@ include('Helper.php');
                    aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>Notice
                 </a>
+                <div class="dropdown-menu dropdown-primary">
+                    <?php Helper::generateLinkFromCategory('Notice') ?>
+                </div>
             </div>
         </li>
     </ul>

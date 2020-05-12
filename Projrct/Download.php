@@ -2,9 +2,9 @@
 include 'Connection.php';
 if(isset($_GET['ID'])){
     $ID= $_GET['ID'];
-    $result = "SELECT * FROM files WHERE ID=$ID";
+    $result = "SELECT * FROM circulardb WHERE ID=$ID";
     $file = mysqli_fetch_assoc($result);
-    $fileDestination = 'uploads/' . $file['name'];
+    $fileDestination = 'uploads/' . $file['FILE'];
     if (file_exists($fileDestination)) {
         header('Content-Description: File Transfer');
         header('Content-Type: application/octet-stream');

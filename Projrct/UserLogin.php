@@ -54,7 +54,7 @@
 
   <?php
   include 'Connection.php';
-  $result = $conn->query("SELECT*FROM admindb") or die($conn->error);
+  $result = $conn->query("SELECT*FROM userdb") or die($conn->error);
   function pre_r($array)
   {
     echo '<pre>';
@@ -89,8 +89,6 @@
         $pwd_err = "Your Password Must Contain At Least 8 Characters!";
       } elseif (!preg_match("#[0-9]+#", $pwd)) {
         $pwd_err = "Your Password Must Contain At Least 1 Number!";
-      } elseif (!preg_match("#[A-Z]+#", $pwd)) {
-        $pwd_err = "Your Password Must Contain At Least 1 Capital Letter!";
       } elseif (!preg_match("#[a-z]+#", $pwd)) {
         $pwd_err = "Your Password Must Contain At Least 1 Lowercase Letter!";
       } else {
@@ -98,10 +96,10 @@
           $email_err = "*Required this field";
           $pwd_err = "*Required this field";
         } else {
-          $qry = "SELECT * FROM admindb WHERE EMAIL='$email' AND PASSWORD='$pwd'";
+          $qry = "SELECT * FROM userdb WHERE EMAIL='$email' AND PASSWORD='$pwd'";
           $result = $conn->query($qry);
           if ($result->num_rows > 0) {
-            header("Location:DataInsert.php");
+            header("Location:HomePage.php");
           } else {
             echo "<script>alert('Invalid Password or Email')</script>";
           }
